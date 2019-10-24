@@ -8,13 +8,13 @@ const cards = document.querySelectorAll(".card");
 
 let Symbol = [];  //all symboles
 let OpenC = [];  // opened cards
-
 let handlerTime;
-
+ 
 let Nstars = 3; // Number of Stars
 let Nmoves = 0; // Number of moves
 let minutesTime = 0;
 let secandsTime = 0;
+let completedTime;   // in Showbox 
 
 
 function initGame() {   // initialize game 
@@ -63,6 +63,7 @@ function StartGM() {    // start game and close
 function stopTimer() {
     clearInterval(handlerTime);
     handlerTime = null;
+
 }
 
 function updateTime() {
@@ -89,7 +90,7 @@ function updateTime() {
         minutesString = minutesTime;
     }
     
-    document.querySelector(".timer").innerText = `${minutesString}:${SecandString}`;
+    completedTime = document.querySelector(".timer").innerText = `${minutesString}:${SecandString}`;
 
     secandsTime += 1;
     
@@ -203,11 +204,24 @@ function UpdateNmoves() {
 
 }
 
+// function getTimer(){
+// document.querySelector("timer");    
+//     }
+
+
 function ShowBox() {
+    // clearInterval(interval);
+    // var Time = getTimer();
+    
     
     let dialog = document.querySelector("#dialog-box");
 
     document.querySelector("#span-moves").innerText = Nmoves;
+    document.querySelector("#span-star").innerText = Nstars;
+
+    // Adding completed Time in Dilog-box
+    document.querySelector("#time").innerText = completedTime ;
+
 
     dialog.showModal();
 
@@ -216,6 +230,9 @@ function ShowBox() {
 
 initGame();
 StartGM();
+
+
+
 
 /*
  * Display the cards on the page
