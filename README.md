@@ -18,6 +18,8 @@ Udacity Front-End Developer Nanodegree Second Project
 
 Game overview
 
+https://trook94.github.io/Memory-game-P2/
+
 
 <img src="img\pic1.JPG" alt="game-overview">
 <img src="img\pic2.JPG" alt="game-overview">
